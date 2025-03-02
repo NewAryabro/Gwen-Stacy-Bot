@@ -37,8 +37,11 @@ LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002370043591'))
 auth_channel = environ.get('AUTH_CHANNEL', '-1002009379876')
 SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002009379876'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1002456481410') # If anyone sends a request message to your bot, you will get it in this channel.
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002009379876')) # 
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002370043591')) # 
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Arya_Movies_Request_Group') #Support group link ( make sure bot is admin )
+AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002009379876').split()]
+MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002009379876 -1001507915878').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
+
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 IS_VERIFY = is_enabled('IS_VERIFY', True)
@@ -65,6 +68,7 @@ REF_PREMIUM = 30
 PREMIUM_POINT = 1500
 #---------------------------------------------------------------
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
+AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 REQUEST_CHANNEL = int(request_channel) if request_channel and id_pattern.search(request_channel) else None
 #---------------------------------------------------------------
 #---------------------------------------------------------------
