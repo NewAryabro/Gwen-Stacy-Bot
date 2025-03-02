@@ -184,8 +184,8 @@ async def start(client:Client, message):
                         buttons = [[
                             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
-                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/Telugu_Movies_999')
+                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="mostsearch"),
+                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/EarlywatchBot')
                 ],[
                     InlineKeyboardButton('🦋 Pʀᴇᴍɪᴜᴍ', callback_data='seeplans'),
                     InlineKeyboardButton('Rᴇғᴇʀ 🌺', callback_data="reffff")
@@ -215,8 +215,8 @@ async def start(client:Client, message):
         buttons = [[
                             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
-                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/Telugu_Movies_999')
+                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="mostsearch"),
+                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/earlywatchbot')
                 ],[
                     InlineKeyboardButton('🦋 Pʀᴇᴍɪᴜᴍ', callback_data='seeplans'),
                     InlineKeyboardButton('Rᴇғᴇʀ 🌺', callback_data="reffff")
@@ -279,8 +279,8 @@ async def start(client:Client, message):
         buttons = [[
             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
-                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/Telugu_Movies_999')
+                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="mostsearch"),
+                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/EarlyWatchBot')
                 ],[
                     InlineKeyboardButton('🦋 Pʀᴇᴍɪᴜᴍ', callback_data='seeplans'),
                     InlineKeyboardButton('Rᴇғᴇʀ 🌺', callback_data="reffff")
