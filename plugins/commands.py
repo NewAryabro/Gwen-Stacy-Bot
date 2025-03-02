@@ -228,9 +228,10 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    
+
     if not await db.has_premium_access(message.from_user.id):
-    channels = (await get_settings(int(message.from_user.id))).get('fsub')  # <- This must be indented
+    channels = (await get_settings(int(message.from_user.id))).get('fsub')  # <- Correctly indented
+
     if channels:
         btn = await is_subscribed(client, message, channels)
         if btn:
@@ -249,6 +250,27 @@ async def start(client, message):
                 parse_mode=enums.ParseMode.HTML
             )
             return
+    
+  #  if not await db.has_premium_access(message.from_user.id):
+   # channels = (await get_settings(int(message.from_user.id))).get('fsub')  # <- This must be indented
+   # if channels:
+       # btn = await is_subscribed(client, message, channels)
+     #   if btn:
+          #  kk, file_id = message.command[1].split("_", 1)
+         #   btn.append([InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data=f"checksub#{kk}#{file_id}")])
+        #    reply_markup = InlineKeyboardMarkup(btn)
+          #  caption = (
+           #     f"👋 Hello {message.from_user.mention}\n\n"
+           #     "You have not joined all our required channels.\n"
+          #      "Please join all the channels and try again."
+        #    )
+         #   await message.reply_photo(
+          #      photo=random.choice(FSUB_PICS),
+          #      caption=caption,
+           #     reply_markup=reply_markup,
+             #   parse_mode=enums.ParseMode.HTML
+         #   )
+         #   return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
