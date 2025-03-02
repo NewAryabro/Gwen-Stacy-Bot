@@ -40,8 +40,6 @@ SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002009379876'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1002456481410') # If anyone sends a request message to your bot, you will get it in this channel.
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002370043591')) # 
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Arya_Movies_Request_Group') #Support group link ( make sure bot is admin )
-AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002009379876').split()]
-MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002009379876 -1001507915878').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
