@@ -40,7 +40,12 @@ async def invite(client, message):
 
 
 @Client.on_message(filters.command("start") & filters.incoming)
-async def start(client:Client, message):
+#async def start(client:Client, message):
+async def start(client, message):
+    if not await check_force_subscription(client, message):
+        return  # యూజర్ జాయిన్ అయ్యేవరకు కొనసాగదు
+
+    await message.reply_text("✅ మీరు మా ఛానెల్స్‌లో సభ్యులుగా ఉన్నారు! బోట్‌ను ఉపయోగించండి.")
     await message.react(emoji=random.choice(REACTIONS))
     pm_mode = False
     try:
