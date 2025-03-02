@@ -209,11 +209,17 @@ async def start(client:Client, message):
         buttons = [[
                             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
-                InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
+                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
+                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/Telugu_Movies_999')
                 ],[
-                InlineKeyboardButton('🌿Main Channel🌿', url='https://t.me/Telugu_Movies_999')
-                ]] 
+                    InlineKeyboardButton('🦋 Pʀᴇᴍɪᴜᴍ', callback_data='seeplans'),
+                    InlineKeyboardButton('Rᴇғᴇʀ 🌺', callback_data="reffff")
+                ],[
+                   # InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 💰', callback_data='donation'),
+                    InlineKeyboardButton('🪅 Mᴀɪɴ Cʜᴀɴɴᴇʟ 🪅', url=f'https://t.me/Telugu_Movies_999')
+                ],[
+                    InlineKeyboardButton('🔖 ᴍɪᴅᴅʟᴇ ᴄʟᴀss ʙᴇꜱᴛ ᴅᴇᴀʟꜱ 🔖', url=f'https://t.me/Vs_Best_Deals')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAENrtNnnRYe5Rf20X2TGSVCgCcJPuu9TwACCRIAAodi6FRXONeJ6WO6qDYE") 
         await asyncio.sleep(1)
@@ -267,11 +273,17 @@ async def start(client:Client, message):
         buttons = [[
             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
-                InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
+                    InlineKeyboardButton('🔍 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
+                    InlineKeyboardButton(' DVDRIPS 📀', url=f'https://t.me/Telugu_Movies_999')
                 ],[
-                InlineKeyboardButton('🌿Main Channel🌿', url='https://t.me/Telugu_Movies_999')
-                ]] 
+                    InlineKeyboardButton('🦋 Pʀᴇᴍɪᴜᴍ', callback_data='seeplans'),
+                    InlineKeyboardButton('Rᴇғᴇʀ 🌺', callback_data="reffff")
+                ],[
+                   # InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 💰', callback_data='donation'),
+                    InlineKeyboardButton('🪅 Mᴀɪɴ Cʜᴀɴɴᴇʟ 🪅', url=f'https://t.me/Telugu_Movies_999')
+                ],[
+                    InlineKeyboardButton('🔖 ᴍɪᴅᴅʟᴇ ᴄʟᴀss ʙᴇꜱᴛ ᴅᴇᴀʟꜱ 🔖', url=f'https://t.me/Vs_Best_Deals')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
             reply_markup=reply_markup,
