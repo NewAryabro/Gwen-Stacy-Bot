@@ -115,9 +115,9 @@ User - {}"""
 ⭐ Rating: {rating} / 10</b>
 """
 
-    FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Telugu_Movies_999">𝙏𝙀𝙇𝙐𝙂𝙐 𝙈𝙊𝙑𝙄𝙀𝙎 999</a>」</b>"""
+  #  FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Telugu_Movies_999">𝙏𝙀𝙇𝙐𝙂𝙐 𝙈𝙊𝙑𝙄𝙀𝙎 999</a>」</b>"""
+    FILE_CAPTION = """<b><a href="https://t.me/Telugu_Movies_999">{file_caption}</a></b>\n\n<b>𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Telugu_Movies_999">𝙏𝙀𝙇𝙐𝙂𝙐 𝙈𝙊𝙑𝙄𝙀𝙎 999</a>」</b>"""
     
-
     ALRT_TXT = """ᴊᴀʟᴅɪ ʏᴇʜᴀ sᴇ ʜᴀᴛᴏ !"""
 
     OLD_ALRT_TXT = """ʏᴏᴜ ᴀʀᴇ ᴜsɪɴɢ ᴍʏ ᴏʟᴅ ᴍᴇssᴀɢᴇs..sᴇɴᴅ ᴀ ɴᴇᴡ ʀᴇǫᴜᴇsᴛ.."""
