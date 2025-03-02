@@ -223,15 +223,24 @@ async def start(client:Client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    if AUTH_CHANNEL and not await is_req_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL), creates_join_request=True)
-        except ChatAdminRequired:
-            logger.error("Make Sure Bot Is Admin In Forcesub Channel")
-            return
-        btn = [[
-            InlineKeyboardButton("🎗️ ᴊᴏɪɴ ɴᴏᴡ 🎗️", url=invite_link.invite_link)
-        ]]
+    channels = (await get_settings(int(message.from_user.id))).get('fsub')
+if channels:  
+    btn = await is_subscribed(client, message, channels)
+    if btn:
+        btn.append([InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data="checksub")])
+        reply_markup = InlineKeyboardMarkup(btn)
+        caption = (
+            f"👋 Hello {message.from_user.mention}\n\n"
+            "You have not joined all our required channels.\n"
+            "Please join the channels listed below and try again."
+        )
+        await message.reply_photo(
+            photo=random.choice(FSUB_PICS),
+            caption=caption,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        return
 
         if message.command[1] != "subscribe":
             
