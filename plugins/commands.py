@@ -223,54 +223,30 @@ async def start(client:Client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    channels = (await get_settings(int(message.from_user.id))).get('fsub')
-if channels:  
-    btn = await is_subscribed(client, message, channels)
-    if btn:
-        btn.append([InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data="checksub")])
-        reply_markup = InlineKeyboardMarkup(btn)
-        caption = (
-            f"👋 Hello {message.from_user.mention}\n\n"
-            "You have not joined all our required channels.\n"
-            "Please join the channels listed below and try again."
-        )
-        await message.reply_photo(
-            photo=random.choice(FSUB_PICS),
-            caption=caption,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        return
-
-        if message.command[1] != "subscribe":
-            
-            try:
-                chksub_data = message.command[1].replace('pm_mode_', '') if pm_mode else message.command[1]
-                kk, grp_id, file_id = chksub_data.split('_', 2)
-                pre = 'checksubp' if kk == 'filep' else 'checksub'
-                btn.append(
-                    [InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data=f"checksub#{file_id}#{int(grp_id)}")]
+    if not await db.has_premium_access(message.from_user.id):
+    if not await db.has_premium_access(message.from_user.id):
+        channels = (await get_settings(int(message.from_user.id))).get('fsub')
+        if channels:  
+            btn = await is_subscribed(client, message, channels)
+            if btn:
+                kk, file_id = message.command[1].split("_", 1)
+                btn.append([InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data=f"checksub#{kk}#{file_id}")])
+                reply_markup = InlineKeyboardMarkup(btn)
+                caption = (
+                    f"👋 Hello {message.from_user.mention}\n\n"
+                    "Yᴏᴜ ʜᴀᴠᴇ ɴᴏᴛ Jᴏɪɴᴇᴅ ᴀʟʟ ᴏᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟs.\n"
+                    "Pʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ **Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟs** ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴀɴᴅ ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ ᴊᴏɪɴ **ᴀʟʟ** ᴄʜᴀɴɴᴇʟs ʟɪsᴛᴇᴅ.\n"
+                    "Aғᴛᴇʀ ᴛʜᴀᴛ, ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ.\n\n"
+                    "आपने हमारे **सभी Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟs** को ज्वाइन नहीं किया है।\n"
+                    "**Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟs** वाले बटन पर Cʟɪᴄᴋ करें। और सुनिश्चित करें कि आपने **सभी चैनल्स** को ज्वाइन किया है।\n"
+                    "इसके बाद आप फिर से ᴛʀʏ करें।..")
+                await message.reply_photo(
+                    photo=random.choice(FSUB_PICS),
+                    caption=caption,
+                    reply_markup=reply_markup,
+                    parse_mode=enums.ParseMode.HTML
                 )
-            except (IndexError, ValueError):
-                print('IndexError: ', IndexError)
-                btn.append(
-                    [InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
-                )
-        reply_markup=InlineKeyboardMarkup(btn)
-        await client.send_photo(
-            chat_id=message.from_user.id,
-            photo=FORCESUB_IMG, 
-            caption=script.FORCESUB_TEXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-       # await client.send_message(
-       #     chat_id=message.from_user.id,
-       #     text="<b>🙁 ғɪʀꜱᴛ ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴍᴏᴠɪᴇ, ᴏᴛʜᴇʀᴡɪꜱᴇ ʏᴏᴜ ᴡɪʟʟ ɴᴏᴛ ɢᴇᴛ ɪᴛ.\n\nᴄʟɪᴄᴋ ᴊᴏɪɴ ɴᴏᴡ ʙᴜᴛᴛᴏɴ 👇</b>",
-       #     reply_markup=InlineKeyboardMarkup(btn),
-       #     parse_mode=enums.ParseMode.HTML
-    #    )
-        return
+                return
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
