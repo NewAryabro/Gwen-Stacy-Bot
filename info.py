@@ -48,15 +48,15 @@ IS_VERIFY = is_enabled('IS_VERIFY', True)
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/vs_Files_Mx_player/230")
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/vs_Files_Mx_player/233")
 TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/vs_Files_Mx_player/234")
-VERIFY_IMG = environ.get("VERIFY_IMG", "https://envs.sh/aPT.jpg")
+VERIFY_IMG = environ.get("VERIFY_IMG", "https://envs.sh/bAR.jpg")
 SHORTENER_API = environ.get("SHORTENER_API", "bdcc02d1dc83876aa44d2bf86fda573ebbc180d7")
 SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", 'modijiurl.com')
 SHORTENER_API2 = environ.get("SHORTENER_API2", "0bd88e310de46cc857e97ed4930b9962403e7290")
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'urllinkshort.in')
 SHORTENER_API3 = environ.get("SHORTENER_API3", "gplinks.com")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", '41897488b538a9c4f0608441919f8e1db62a68c9')
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
-THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
+TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "480"))
+THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "480"))
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 LANGUAGES = ["hindi", "english", "telugu", "tamil", "kannada", "malayalam", "bengali", "marathi", "gujarati", "punjabi", "marathi"]
@@ -75,7 +75,7 @@ START_IMG = (environ.get('START_IMG', 'https://envs.sh/aNu.jpg https://envs.sh/a
 FORCESUB_IMG = environ.get('FORCESUB_IMG', 'https://graph.org/file/09320f6074b5aeb2b9023-edf4a1129e9e6c4a8f.jpg')
 REFER_PICS = (environ.get("REFER_PICS", "https://envs.sh/fCR.jpg")).split() 
 PAYPICS = (environ.get('PAYPICS', 'https://envs.sh/fCR.jpg')).split()
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://envs.sh/aPI.jpg'))
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://graph.org/file/242b7f1b52743938d81f1.jpg'))
 REACTIONS = ["❤"]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
