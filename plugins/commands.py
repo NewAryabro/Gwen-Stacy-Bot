@@ -230,46 +230,25 @@ async def start(client, message):
         return
     
     if not await db.has_premium_access(message.from_user.id):
-    # Step 1: Fetch channels and print debug info
-    channels = (await get_settings(int(message.from_user.id))).get('fsub')
-
-    print(f"DEBUG: User {message.from_user.id} - Force Sub Channels: {channels}")
-
-    if not channels:
-        print("DEBUG: No force subscription channels found! This may be the issue.")
-        return  # Stop execution if no force sub channels are set
-
-    # Step 2: Check subscription status
-    btn = await is_subscribed(client, message, channels)
-    print(f"DEBUG: Subscription Button Data: {btn}")
-
-    if btn:
-        # Step 3: Check message.command[1] before using it
-        try:
+    channels = (await get_settings(int(message.from_user.id))).get('fsub')  # <- This must be indented
+    if channels:
+        btn = await is_subscribed(client, message, channels)
+        if btn:
             kk, file_id = message.command[1].split("_", 1)
-            print(f"DEBUG: Command Arguments Extracted - kk: {kk}, file_id: {file_id}")
-        except IndexError:
-            kk, file_id = "unknown", "unknown"
-            print("DEBUG: Error! message.command[1] is missing or incorrect!")
-
-        # Add retry button
-        btn.append([InlineKeyboardButton("♻️ Try Again ♻️", callback_data=f"checksub#{kk}#{file_id}")])
-    else:
-        print("DEBUG: No buttons were generated! This may be the issue.")
-        btn = [[InlineKeyboardButton("Join Now 🔗", url="https://t.me/your_channel")]]
-
-    reply_markup = InlineKeyboardMarkup(btn)
-
-    # Step 4: Send message with subscription requirement
-    print("DEBUG: Sending Force Subscription Message")
-    await message.reply_photo(
-        photo=random.choice(FSUB_PICS),
-        caption="You must join all channels before proceeding.",
-        reply_markup=reply_markup,
-        parse_mode=enums.ParseMode.HTML
-    )
-    return
-
+            btn.append([InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data=f"checksub#{kk}#{file_id}")])
+            reply_markup = InlineKeyboardMarkup(btn)
+            caption = (
+                f"👋 Hello {message.from_user.mention}\n\n"
+                "You have not joined all our required channels.\n"
+                "Please join all the channels and try again."
+            )
+            await message.reply_photo(
+                photo=random.choice(FSUB_PICS),
+                caption=caption,
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+            return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('✨ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ✨', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
