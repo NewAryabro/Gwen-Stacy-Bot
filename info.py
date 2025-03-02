@@ -46,15 +46,15 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Arya_Movies_Request_Gro
 IS_VERIFY = is_enabled('IS_VERIFY', True)
 #---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/vs_Files_Mx_player/230")
-TUTORIAL_2 = environ.get("TUTORIAL_2", "")
-TUTORIAL_3 = environ.get("TUTORIAL_3", "")
+TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/vs_Files_Mx_player/233")
+TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/vs_Files_Mx_player/234")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://envs.sh/aPT.jpg")
 SHORTENER_API = environ.get("SHORTENER_API", "bdcc02d1dc83876aa44d2bf86fda573ebbc180d7")
 SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", 'modijiurl.com')
-SHORTENER_API2 = environ.get("SHORTENER_API2", "")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", '')
-SHORTENER_API3 = environ.get("SHORTENER_API3", "")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", '')
+SHORTENER_API2 = environ.get("SHORTENER_API2", "0bd88e310de46cc857e97ed4930b9962403e7290")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'urllinkshort.in')
+SHORTENER_API3 = environ.get("SHORTENER_API3", "gplinks.com")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", '41897488b538a9c4f0608441919f8e1db62a68c9')
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
 #---------------------------------------------------------------
@@ -76,13 +76,13 @@ FORCESUB_IMG = environ.get('FORCESUB_IMG', 'https://graph.org/file/09320f6074b5a
 REFER_PICS = (environ.get("REFER_PICS", "https://envs.sh/fCR.jpg")).split() 
 PAYPICS = (environ.get('PAYPICS', 'https://envs.sh/fCR.jpg')).split()
 SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://envs.sh/aPI.jpg'))
-REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡"]
+REACTIONS = ["❤"]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 FILE_AUTO_DEL_TIMER = int(environ.get('FILE_AUTO_DEL_TIMER', '600'))
 AUTO_FILTER = is_enabled('AUTO_FILTER', True)
-IS_PM_SEARCH = is_enabled('IS_PM_SEARCH', False)
+IS_PM_SEARCH = is_enabled('IS_PM_SEARCH', True) # Don't Change It ( If You Want To Turn It On Then Turn It On By Commands) 
 IS_SEND_MOVIE_UPDATE = is_enabled('IS_SEND_MOVIE_UPDATE', False) # Don't Change It ( If You Want To Turn It On Then Turn It On By Commands) We Suggest You To Make It Turn Off If You Are Indexing Files First Time.
 PORT = environ.get('PORT', '5000')
 MAX_BTN = int(environ.get('MAX_BTN', '8'))
